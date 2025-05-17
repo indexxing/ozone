@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  ozone:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      OZONE_PORT: 3000
+      PORT: 3000
+      NODE_ENV: ${NODE_ENV}
+      DATABASE_URL: ${DATABASE_URL}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD}
+      PDS_URL: ${PDS_URL}
+      BGS_URL: ${BGS_URL}
